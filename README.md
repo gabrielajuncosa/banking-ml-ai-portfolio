@@ -3,7 +3,7 @@
 A portfolio of hands-on, well-commented notebooks developed for applied teaching
 and data science, with a focus on banking and financial services use cases.
 
-Each notebook is self-contained, runs on Google Colab, and is written to serve
+Each notebook is self-contained, runs on Jupyter Notebooks, and is written to serve
 two purposes simultaneously: as a working technical example and as a teaching
 blueprint that can be adapted for learners at different levels.
 
