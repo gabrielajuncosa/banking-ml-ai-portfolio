@@ -16,7 +16,6 @@ blueprint that can be adapted for learners at different levels.
 │   └── 01_classical_ml_credit_risk.ipynb
 │
 ├── 02_nlp/
-│   ├── 🚧 Under active development
 │   ├── 02_hugging_face_intro_banking.ipynb
 │   └── 03_nlp_text_classification_banking.ipynb
 │   
