@@ -82,7 +82,16 @@ large-scale data collection, and computational analysis.
 
 ## How to Run
 
-### Local (Jupyter)
+### Option A — Google Colab (recommended)
+1. Click the notebook you want to open
+2. Click the **Open in Colab** badge at the top of the notebook
+3. For notebooks marked 🔑, add your `OPENAI_API_KEY` to Colab Secrets:
+   - Click the key icon in the left sidebar
+   - Add a secret named `OPENAI_API_KEY`
+   - Paste your key
+4. Run all cells from top to bottom
+
+### Option B — Local (Jupyter)
 ```bash
 git clone https://github.com/gabrielajuncosa/banking-ml-ai-portfolio
 cd banking-ml-ai-portfolio
