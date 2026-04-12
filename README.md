@@ -20,7 +20,7 @@ blueprint that can be adapted for learners at different levels.
 │   └── 03_nlp_text_classification_banking.ipynb
 │   
 ├── 03_llm_and_genai/
-│   ├── 🚧 Under active development
+│   🚧 Under active development
 │   ├── 05_llm_prompting_techniques.ipynb
 │   ├── 06_rag_pipeline_banking.ipynb
 │   └── 07_agent_architectures_banking.ipynb
