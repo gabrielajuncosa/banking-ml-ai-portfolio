@@ -1,0 +1,12 @@
+{{ block title }}Thank you for your time!{{ endblock }}
+{{ block content }}
+
+    <script>
+        let didnotconsent = js_vars.didnotconsent;
+
+        window.onload = function(){
+            window.location.href=didnotconsent;
+        }
+    </script>
+
+{{ endblock }}
