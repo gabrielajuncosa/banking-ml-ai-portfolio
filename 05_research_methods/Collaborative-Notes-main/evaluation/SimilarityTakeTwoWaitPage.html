@@ -1,0 +1,21 @@
+{{ extends 'otree/WaitPage.html' }}
+
+{{ block title }}
+Please wait for your partner
+{{ endblock }}
+{{ block content }}
+
+
+    <p>
+        Please, wait while your partner completes the Collaborative Evaluation.
+    </p>
+
+    <script>
+        setInterval(function () {
+            window.location.reload();
+        }, js_vars.timeout * 1000);
+
+    </script>
+
+
+{{ endblock }}

@@ -1,0 +1,100 @@
+{{ block title }} <!-- Feedback No Review --> {{ endblock }}
+{{ block content }}
+<style>
+.button {
+    background-color: #3182bd;
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+.button2 {
+  background-color: white;
+  color: black;
+  border: 2px solid #008CBA;
+}
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+.otree-timer {
+    display: none;
+}
+</style>
+
+<div class="card bg-white mb-1">
+    <h2 class="card-header">Thank you!</h2>
+      <div class="card-body">
+          <p>
+              Thank you for participating in the study! Before you finish the study, please answer the questions below.
+              Your answers will help us understand how well you collaborated with your partner. When you're satisfied
+              with your answers, click on "Exit" to go back to Prolific where you will receive a <b>£4.00 ($5.20)</b>
+              payment and lottery entry for a chance to win <b>£100 ($125)</b>.
+          </p>
+      </div>
+</div>
+<br>
+<div class="card bg-white mb-1">
+    <h2 class="card-header">Final Questionnaire</h2>
+      <div class="card-body">
+          {{ if reason_one }}
+          <h5 class="card-title">Please, help us understand the discrepancy in your <u><b>evaluation labels</b></u>. Why
+              do you believe your evaluation labels (i.e. misleading/not misleading) do not match?
+          </h5>
+          <div>
+            <p class="card-text">{{ form.why_label }}</p>
+          </div>
+          {{ elif reason_two }}
+          <h5 class="card-title">Please, help us understand the discrepancy in your <u><b>justification texts</b></u>.
+              Why do you believe your evaluation texts do not match?
+          </h5>
+          <div>
+            <p class="card-text">{{ form.why_text }}</p>
+          </div>
+          {{ elif reason_three }}
+          <h5 class="card-title">Please, help us understand the discrepancy in your <u><b>evaluation labels</b></u>. Why
+              do you believe your evaluation labels (i.e. misleading/not misleading) do not match?
+          </h5>
+          <div>
+            <p class="card-text">{{ form.why_label }}</p>
+          </div>
+          <br>
+          <br>
+          <h5 class="card-title">Please, help us understand the discrepancy in your <u><b>justification texts</b></u>.
+              Why do you believe your evaluation texts do not match?
+          </h5>
+          <div>
+            <p class="card-text">{{ form.why_text }}</p>
+          </div>
+          {{ endif }}
+          <br>
+          <br>
+          <h5 class="card-title">How easy was it for you and your partner to come up with a text you agreed on?
+          </h5>
+          <div>
+            <p class="card-text">{{ form.collabEval }}</p>
+          </div>
+          <br>
+          <br>
+          <h5 class="card-title">OPTIONAL: You may use the space below to share any additional comments or information
+              that you think will help us better understand your experience today.
+          </h5>
+          <div>
+            <p class="card-text">{{ form.other_expand }}</p>
+          </div>
+          <br>
+          <div>
+    <button class="button button2">Exit</button>
+</div>
+      </div>
+</div>
+<br>
+
+
+{{ endblock }}

@@ -1,0 +1,12 @@
+{{ block title }}Redirecting to Prolific...{{ endblock }}
+{{ block content }}
+
+    <script>
+        let failedattentioncheck = js_vars.failedattentioncheck;
+
+        window.onload = function(){
+            window.location.href=failedattentioncheck;
+        }
+    </script>
+
+{{ endblock }}

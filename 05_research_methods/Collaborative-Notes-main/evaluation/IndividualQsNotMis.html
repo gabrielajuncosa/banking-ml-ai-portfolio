@@ -1,0 +1,62 @@
+
+{{ block title }} INDIVIDUAL EVALUATION QUESTIONNAIRE {{ endblock }}
+{{ block content }}
+<style>
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+.button {
+    background-color: #3182bd;
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+.button2 {
+  background-color: white;
+  color: black;
+  border: 2px solid #008CBA;
+}
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+</style>
+
+<div class="card">
+  <h2 class="card-header">Please, answer the following questions</h2>
+  <div class="card-body">
+      <h5 class="card-title">Why do you believe the tweet may not be misleading? Choose all that apply.</h5>
+      <p class="card-text">
+          {{ for field in C.NOT_MISLEADING }}
+            <label>
+                <input type="checkbox" name="{{ field.name }}" value="1">
+                {{ field.label }}
+            </label><br>
+          {{ endfor }}
+      </p>
+      <br>
+      <h5 class="card-title">Have you done any of the following? Choose all that apply.</h5>
+      <p class="card-text">
+          {{ for field in C.ONLINE_ACTIVITY }}
+            <label>
+                <input type="checkbox" name="{{ field.name }}" value="1">
+                {{ field.label }}
+            </label><br>
+          {{ endfor }}
+      </p>
+  </div>
+</div>
+<br>
+<button class="button button2">Submit</button>
+
+{{ endblock }}

@@ -1,0 +1,124 @@
+{{ block title }} COLLABORATIVE EVALUATION TAKE TWO {{ endblock }}
+
+{{ block content }}
+
+<style>
+.center {
+    display: block;
+    border: 4px solid #555;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+.button {
+    background-color: #3182bd;
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+.button2 {
+  background-color: white;
+  color: black;
+  border: 2px solid #008CBA;
+}
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+</style>
+
+<div class="card bg-warning mb-1">
+<h3 class="card-header">IMPORTANT!</h3>
+    <div class="card-body">
+        <p>
+          You've returned to the Collaborative Evaluation because your <u><b>evaluation label</b></u> does not match your
+            partner's. Additionally, we have observed inconsistencies in your <u><b>justification texts</b></u>.
+          <ol>
+            <li>Please work together to find common ground on whether the tweet could potentially be misleading. Should
+                you be unable to reach a consensus, apply the labeling that you individually deem appropriate.</li>
+            <li>Take a moment to review your evaluation texts. If you believe they convey a similar message, please
+                resubmit the previous text (as indicated below). However, if there are differences, aim to agree on
+                phrasing that clarifies the reasoning behind your conclusion. Should you be unable to reach a consensus,
+                you may revert to your original text.</li>
+            <li>Remember that your <u>chat history</u> will be monitored to verify collaboration.</b></li>
+          </ol>
+          <b>Your</b> conclusion: <i>The tweet is <ins>{{my_eval}}</ins>.</i>
+          <br>
+          Your <b>partner's</b> conclusion: <i>The tweet is <ins>{{partner_eval}}</ins>.</i>
+          <br>
+          <br>
+          <b>Your</b> text: <i><ins>{{my_text}}</ins></i>
+          <br>
+          Your <b>partner's</b> text: <i><ins>{{partner_text}}</ins></i>
+        </p>
+    </div>
+</div>
+
+
+<div class="card bg-white mb-1">
+<h3 class="card-header">With your partner, evaluate the Tweet below</h3>
+    <div class="card-body">
+      <img src="{{ static image_path }}" class="center"/>
+    </div>
+
+</div>
+<div class="card bg-white mb-1">
+    <h3 class="card-header">CHAT BOX</h3>
+      <div class="card-body">
+          {{ chat nickname=Nickname_chat_one }}
+      </div>
+</div>
+
+<div class="card bg-white mb-1">
+    <h3 class="card-header">TASK 1: Is the tweet misinformed or potentially misleading?</h3>
+      <div class="card-body">
+          <div class="card-text">
+              <h5 class="card-title">Based on the latest available evidence, <u><b>WE</b></u> believe the tweet is:</h5>
+          {{ form.evidenceEval_COLL_TakeTwo  }}
+          </div>
+      </div>
+</div>
+<div class="card bg-white mb-1">
+    <h3 class="card-header">TASK 2: Submit review text here</h3>
+    <div class="card-body">
+          <div class="card-text">
+              Once you and your partner have written your explanation for your evaluation, please copy and paste it
+              into the space provided below. Keep your response within 280 characters (excluding URLs).
+              <br>
+              <br>
+              Please, before submitting make sure your answer fulfills the study's requirements:
+              <ol>
+                <li>The text offers context to clarify why <u><b>WE</b></u> believe the tweet is or isn't misleading.</li>
+                <li>If available, the text cites reliable sources.</li>
+                <li>The content remains consistent for both myself and my partner.</li>
+              </ol>
+           </div>
+          <br>
+          {{ form.suggestedEdit_COLL_TakeTwo }}
+          <span style="color:#999;">Your text has</span> <span id="characters" style="color:#999;">0</span> <span style="color:#999;">characters</span>
+      </div>
+</div>
+<br>
+<button class="button button2">Submit</button>
+
+{{ endblock }}
+
+{{ block scripts }}
+<script>
+    $('textarea').keyup(updateCount);
+    $('textarea').keydown(updateCount);
+
+    function updateCount() {
+    var cs = [0+ $(this).val().length];
+    $('#characters').text(cs);
+    }
+</script>
+{{ endblock }}
+

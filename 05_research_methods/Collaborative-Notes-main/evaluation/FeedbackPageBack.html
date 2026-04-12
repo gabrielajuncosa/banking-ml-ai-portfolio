@@ -1,0 +1,69 @@
+{{ block title }} <!-- Feedback after second try --> {{ endblock }}
+{{ block content }}
+<style>
+.button {
+    background-color: #3182bd;
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+.button2 {
+  background-color: white;
+  color: black;
+  border: 2px solid #008CBA;
+}
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+.otree-timer {
+    display: none;
+}
+</style>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body class="w3-container">
+    <div class="w3-panel w3-pale-green w3-round-large w3-border">
+      <h3>Thank You!</h3>
+      <p>
+          Thank you for participating in the study! Before you finish the study, please answer the questions below.
+          When finished, click on "Submit" to be redirected to Prolific automatically.
+      </p>
+    </div>
+</body>
+
+<div>
+    <h4> {{ form.collabEval.label }}</h4>
+    {{ form.collabEval }}
+    <br>
+    {{ if player.reason_return == 1 }}
+    <h4> We have observed your <u><b>evaluation label</b></u> still does not match your partner's. Please, help us understand why.
+    <br> {{ form.why_label.label }}</h4>
+    {{ form.why_label }}
+    {{ elif player.reason_return == 2 }}
+    <h4> We have observed that your <u><b>justification text</b></u> still does not match your partner's. Please, help us understand why.
+    <br>
+        <br>
+        {{ form.why_text.label }}</h4>
+    {{ form.why_text }}
+    {{ elif player.reason_return == 3 }}
+    <h4> We have observed neither your <u><b>evaluation labels</b></u>, nor your <u><b>justification texts</b></u> match despite
+        reviewing your answers. Please, help us understand why.</h4>
+    <h4> {{ form.why_label.label }}</h4>
+    {{ form.why_label }}
+    <br>
+    <h4> {{ form.why_text.label }}</h4>
+    {{ form.why_text }}
+    {{ endif }}
+    <br>
+    <button class="button button2">Submit</button>
+
+</div>
+
+{{ endblock }}

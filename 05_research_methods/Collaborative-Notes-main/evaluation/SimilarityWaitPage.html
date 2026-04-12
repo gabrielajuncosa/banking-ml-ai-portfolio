@@ -1,0 +1,31 @@
+{{ extends 'otree/WaitPage.html' }}
+
+{{ block title }}
+Please wait for your partner
+{{ endblock }}
+{{ block content }}
+
+{{ if otherPlayerDropped }}
+    <p>
+        We're sorry to inform you that <b>your partner has dropped out</b>.
+        <br>
+        Please submit the study with completion code <b>{{ player.completion_code_no_partner }}</b>. After we review your
+        information, you will receive a payment.
+        <br>
+        Thank you for your time!
+    </p>
+{{ else }}
+    <p>
+        Please, wait while your partner completes the Collaborative Evaluation. If you are left waiting for longer than
+        {{ C.COLLABORATIVE_TIME }} minutes, the study will end, and we'll share a completion code to be submitted to Prolific.
+    </p>
+
+    <script>
+        setInterval(function () {
+            window.location.reload();
+        }, js_vars.timeout * 1000);
+
+    </script>
+{{ endif }}
+
+{{ endblock }}

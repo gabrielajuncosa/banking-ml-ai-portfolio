@@ -1,0 +1,55 @@
+
+{{ block title }} <!--Success --> {{ endblock }}
+{{ block content }}
+<style>
+.button {
+    background-color: #3182bd;
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+.button2 {
+  background-color: white;
+  color: black;
+  border: 2px solid #008CBA;
+}
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+.otree-timer {
+    display: none;
+}
+</style>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body class="w3-container">
+    <div class="w3-panel w3-pale-green w3-round-large w3-border">
+      <h3>Success! </h3>
+      <p>
+          Thank you for participating in the study! You've completed the task successfully. Before you finish the
+          study, please answer the question below. Click on "Submit" to be redirected to Prolific automatically.
+      </p>
+    </div>
+</body>
+
+<div>
+    <h4> {{ form.collabEval.label }}</h4>
+    {{ form.collabEval }}
+    <br>
+    <button class="button button2">Submit</button>
+
+</div>
+
+{{ endblock }}
+
+
+
+
+
