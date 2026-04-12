@@ -1,0 +1,103 @@
+{{ block title }} <!-- MISINFORMATION CHECK -->{{ endblock }}
+
+{{ block content }}
+<style>
+.button {
+    background-color: #3182bd;
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+.button2 {
+  background-color: white;
+  color: black;
+  border: 2px solid #008CBA;
+}
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+</style>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <body class="w3-container">
+    <div class="w3-panel w3-pale-yellow w3-card-4 w3-round-large w3-border">
+        <div class="card-header"><h2>WARNING! Failed consistency check</h2> </div>
+        {{ if reason_one }}
+            <p>
+              <br>
+              <b>Your evaluation does not match your partner's.</b>
+              <br>
+              <br>
+              <b>Your</b> conclusion: <i>The tweet is <ins>{{my_eval}}</ins>.</i>
+              <br>
+              Your <b>partner's</b> conclusion: <i>The tweet is <ins>{{partner_eval}}</ins>.</i>
+              <br>
+              <br>
+              If you would like to change your evaluation, click on "Back". Otherwise, click on "Next" to complete a final
+              questionnaire and return to Prolific.
+              <br>
+              <em>Please note that redirection will only occur if your partner agrees.</em>
+            </p>
+        {{ elif reason_two }}
+            <p>
+              <br>
+              Your <b>evaluation texts do not meet the study's standards.</b>
+              <br>
+              <br>
+              <b>Your</b> text: <i><ins>{{my_text}}</ins></i>
+              <br>
+              Your <b>partner's</b> text: <i><ins>{{partner_text}}</ins></i>
+              <br>
+              <br>
+              If you would like to change your evaluation, click on "Back". Otherwise, click on "Next" to complete a final
+              questionnaire and return to Prolific.
+              <br>
+              <em>Please note that redirection will only occur if your partner agrees.</em>
+            </p>
+        {{ elif reason_three }}
+            <p>
+              <br>
+              <b>Your evaluation does not match your partner's.</b> Also, we noticed that your <b>evaluation texts do not
+                meet the study's standards.</b>
+              <br>
+              <br>
+              <b>Your</b> conclusion: <i>The tweet is <ins>{{my_eval}}</ins>.</i>
+              <br>
+              Your <b>partner's</b> conclusion: <i>The tweet is <ins>{{partner_eval}}</ins>.</i>
+              <br>
+              <br>
+                <b>Your</b> text: <i><ins>{{my_text}}</ins></i>
+                <br>
+                Your <b>partner's</b> text: <i><ins>{{partner_text}}</ins></i>
+                <br>
+                <br>
+              If you would like to change your evaluation, click on "Yes". Otherwise, click on "No" to complete a final
+              questionnaire and return to Prolific.
+              <br>
+              <em>Please note that redirection will only occur if your partner agrees.</em>
+            </p>
+        {{ endif }}
+
+        </div>
+    </body>
+    <br>
+    <div>
+        <h4> Would you like to revisit the task and modify your answers?</h4>
+        <button class="button button2" name="back_label" value="True">Yes</button>
+        <button class="button button2" name="back_label" value="False">No</button>
+    </div>
+
+{{ endblock }}
+
+
+
+
+

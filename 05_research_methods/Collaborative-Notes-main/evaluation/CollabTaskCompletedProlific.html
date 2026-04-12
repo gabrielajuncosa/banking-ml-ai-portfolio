@@ -1,0 +1,12 @@
+{{ block title }}Redirecting to Prolific...{{ endblock }}
+{{ block content }}
+
+    <script>
+        let bonuspayment = js_vars.bonuspayment;
+
+        window.onload = function(){
+            window.location.href=bonuspayment;
+        }
+    </script>
+
+{{ endblock }}

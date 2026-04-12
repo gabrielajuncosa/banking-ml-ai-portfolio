@@ -1,0 +1,57 @@
+
+{{ block title }} <!--Failed Attention --> {{ endblock }}
+{{ block content }}
+<style>
+.button {
+    background-color: #3182bd;
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+.button2 {
+  background-color: white;
+  color: black;
+  border: 2px solid #008CBA;
+}
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+.otree-timer {
+    display: none;
+}
+</style>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <body class="w3-container">
+    <div class="w3-panel w3-pale-red w3-round-large w3-border">
+      <h3>Warning! Failed commitment check </h3>
+      <p>
+          <b>{{endCode_text}}</b>
+          <br>
+          <br>
+          To pass the attention check, you must "Agree" with all four statements in the Commitment Check form. You agreed
+          with <b>{{suma}}</b> statement(s).
+          <br>
+          <br>
+          If you want to change your answers, select <i>"Back"</i> to return to the Commitment Check form. Otherwise, wait a few
+          minutes or click on <i>"Exit"</i> to go back to Prolific.
+      </p>
+    </div>
+    </body>
+    <div>
+        <button class="button button2" name="back_attention" value="True">Back</button>
+        <button class="button button2" name="back_attention" value="False">Exit</button>
+    </div>
+{{ endblock }}
+
+
+
+
+

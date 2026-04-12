@@ -1,0 +1,27 @@
+{{ extends 'otree/WaitPage.html' }}
+{{ block title }}
+Please wait to be matched. Do not leave this tab!
+{{ endblock }}
+{{ block content }}
+
+{{ if timeout_happened }}
+    <p>
+        If you haven't yet been matched, try refreshing the page. If that doesn't work, <b><u>please contact us</u></b>.
+    </p>
+{{ else }}
+    <p>
+        <b>IMPORTANT!</b> It is very important that you stay on this page while waiting to be matched. Do not open or switch to other tabs,
+        and remain at your computer station. Switching to different tabs is seen as a sign of inactivity, which <b>disqualifies
+        participants</b> from being matched. <b>If you switch tabs, you'll <u>lose priority</u> in the waiting group,
+        potentially leading to an inability to receive a task assignment.</b>
+    </p>
+
+    <script>
+        setInterval(function () {
+            window.location.reload();
+        }, js_vars.timeout * 1000);
+
+    </script>
+{{ endif }}
+
+{{ endblock }}

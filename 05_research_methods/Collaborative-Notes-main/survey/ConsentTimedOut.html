@@ -1,0 +1,42 @@
+
+{{ block title }} <!--No Consent --> {{ endblock }}
+{{ block content }}
+<style>
+.button {
+    background-color: #3182bd;
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+.button2 {
+  background-color: white;
+  color: black;
+  border: 2px solid #008CBA;
+}
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+</style>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <body class="w3-container">
+    <div class="w3-panel w3-pale-red w3-round-large w3-border">
+      <h3>You cannot continue! </h3>
+        <br>
+      <p>
+          Thank you for your interest in the study.
+          <br>
+          <br>
+          You may not continue because: <b>{{endCode_text}}</b>
+      </p>
+    </div>
+    </body>
+
+{{ endblock }}

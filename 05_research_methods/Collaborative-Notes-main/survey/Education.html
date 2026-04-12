@@ -1,0 +1,51 @@
+
+{{ block title }} <!--Political affiliation survey --> {{ endblock }}
+{{ block content }}
+
+<style>
+.button {
+    background-color: #3182bd;
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+.button2 {
+  background-color: white;
+  color: black;
+  border: 2px solid #008CBA;
+}
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+</style>
+
+<div class="card">
+  <h2 class="card-header">Political affiliation survey</h2>
+  <div class="card-body">
+      <h5 class="card-title">How strongly do you identify with either of the two main political parties in the U.S. (Democrat and
+            Republican parties)?</h5>
+      <div style="text-align: center;">
+        <p class="card-text">{{ form.political_affiliation }}</p>
+      </div>
+  </div>
+
+  <div class="card-body">
+      <h5 class="card-title">{{ form.prolific_id.label }}</h5>
+      <p class="card-text">{{ form.prolific_id }}</p>
+  </div>
+</div>
+<br>
+<button class="button button2">Next</button>
+
+
+{{ endblock }}
+
+

@@ -1,0 +1,12 @@
+{{ block title }}Redirecting to Prolific...{{ endblock }}
+{{ block content }}
+
+    <script>
+        let manualreview = js_vars.manualreview;
+
+        window.onload = function(){
+            window.location.href=manualreview;
+        }
+    </script>
+
+{{ endblock }}

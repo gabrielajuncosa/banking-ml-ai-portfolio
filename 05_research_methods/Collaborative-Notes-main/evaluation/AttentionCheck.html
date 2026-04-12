@@ -1,0 +1,62 @@
+{{ block title }} <!--Attention Check --> {{ endblock }}
+{{ block content }}
+
+<style>
+.button {
+    background-color: #3182bd;
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+.button2 {
+  background-color: white;
+  color: black;
+  border: 2px solid #008CBA;
+}
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+</style>
+
+<div class="card">
+  <h2 class="card-header">Individual Evaluation has timed out!</h2>
+  <div class="card-body">
+      <h6 class="card-title">You failed to complete the individual evaluation task in the allotted time. Before proceeding
+          to the collaborative evaluation task, you must confirm you're still active. Please, answer the following question.</h6>
+      <p>
+      <h5 class="card-title">{{ form.attention_check_IND.label }}</h5>
+      {{ form.attention_check_IND }}
+      </p>
+      </div>
+  </div>
+
+</div>
+<br>
+<button class="button button2">Submit</button>
+
+
+{{ endblock }}
+
+{{ block scripts }}
+<script>
+  function sayReady() {
+    let msg = new SpeechSynthesisUtterance();
+    // or: de-DE, zh-CN, ja-JP, es-MX, etc.
+    msg.language = 'en-US';
+    // actually better to use js_vars than double-braces
+    msg.text = "Go back to the experiment tab. You have 60 seconds to complete an attention check.";
+    window.speechSynthesis.speak(msg);
+  }
+  if (document.hidden) {
+    sayReady();
+  }
+</script>
+{{ endblock }}
